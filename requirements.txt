@@ -1,0 +1,7 @@
+tensorflow
+numpy
+biopython
+scipy
+numba
+matplotlib
+notebook

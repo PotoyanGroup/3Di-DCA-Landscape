@@ -28,8 +28,8 @@ num_sequences, seq_len = get_fasta_file_dimensions(fasta_in)
 print(
    f"Sequence length: {seq_len} \n Number sequences: {num_sequences} \n steps_per_epoch={num_sequences // BATCH_SIZE}")
 
-vae = VAE(num_aa_types=23, dim_latent_vars=2, dim_msa_vars=seq_len, num_hidden_units=seq_len*3, activation_func='relu', regularization=1e-4)
-vae.compute_output_shape(input_shape=(None, 23 * seq_len))
+vae = VAE(num_aa_types=21, dim_latent_vars=2, dim_msa_vars=seq_len, num_hidden_units=seq_len*3, activation_func='relu', regularization=1e-4)
+vae.compute_output_shape(input_shape=(None, 21 * seq_len))
 
 # Wrap generator in tf.Dataset.
 dtypes = tf.int8  # datatype for return value of read_fasta_as_one_hot_encoded np.int8 -> tf.int8
