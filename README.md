@@ -6,7 +6,7 @@ Shukla D, Martin J, Morcos F, Potoyan DA. *A Structure-Aware Generative AI Frame
 
 ## Pipeline Figure
 
-![Figure 1 from the preprint: ProstT5-3Di and VAE-based structural landscape generation pipeline](https://github.com/Divyanshu2132/DCA-3Di/blob/main/assets/pipeline-figure-1.jpg)
+![Figure 1 from the preprint: ProstT5-3Di and VAE-based structural landscape generation pipeline](https://github.com/PotoyanGroup/3Di-DCA-Landscape/blob/main/assets/pipeline-figure-1.jpg)
 
 ## Project Overview
 
@@ -22,12 +22,12 @@ This method builds structure-informed protein landscapes by combining:
 
 ## Implementation
 
-- [`run_vae.py`](https://github.com/Divyanshu2132/DCA-3Di/blob/main/run_vae.py): trains the VAE on a FASTA alignment
-- [`model/`](https://github.com/Divyanshu2132/DCA-3Di/blob/main/model): VAE model definition, sampling layer, and FASTA one-hot encoding utilities
-- [`dca/`](https://github.com/Divyanshu2132/DCA-3Di/blob/main/dca): mean-field DCA implementation, Hamiltonian scoring, contact-map helpers, and analysis utilities
-- [`Analysis.ipynb`](https://github.com/Divyanshu2132/DCA-3Di/blob/main/Analysis.ipynb): notebook for generating and plotting structural landscapes from saved data
-- [`translate.sh`](https://github.com/Divyanshu2132/DCA-3Di/blob/main/translate.sh): SLURM wrapper for an external translation script
-- [`train.sh`](https://github.com/Divyanshu2132/DCA-3Di/blob/main/train.sh): SLURM wrapper for VAE training
+- [`run_vae.py`](https://github.com/PotoyanGroup/3Di-DCA-Landscape/blob/main/run_vae.py): trains the VAE on a FASTA alignment
+- [`model/`](https://github.com/PotoyanGroup/3Di-DCA-Landscape/blob/main/model): VAE model definition, sampling layer, and FASTA one-hot encoding utilities
+- [`dca/`](https://github.com/PotoyanGroup/3Di-DCA-Landscape/blob/main/dca): mean-field DCA implementation, Hamiltonian scoring, contact-map helpers, and analysis utilities
+- [`Analysis.ipynb`](https://github.com/PotoyanGroup/3Di-DCA-Landscape/blob/main/Analysis.ipynb): notebook for generating and plotting structural landscapes from saved data
+- [`translate.sh`](https://github.com/PotoyanGroup/3Di-DCA-Landscape/blob/main/translate.sh): SLURM wrapper for an external translation script
+- [`train.sh`](https://github.com/PotoyanGroup/3Di-DCA-Landscape/blob/main/train.sh): SLURM wrapper for VAE training
 
 ## End-To-End Workflow
 
@@ -45,19 +45,19 @@ The workflow implied by the paper and partially implemented here is:
 
 ## Repository Layout
 
-- [`model/model.py`](https://github.com/Divyanshu2132/DCA-3Di/blob/main/model/model.py): VAE encoder/decoder and training step
-- [`model/layers.py`](https://github.com/Divyanshu2132/DCA-3Di/blob/main/model/layers.py): reparameterization layer
-- [`model/generator.py`](https://github.com/Divyanshu2132/DCA-3Di/blob/main/model/generator.py): FASTA loading and one-hot encoding
-- [`dca/dca_class.py`](https://github.com/Divyanshu2132/DCA-3Di/blob/main/dca/dca_class.py): main DCA interface
-- [`dca/dca_functions.py`](https://github.com/Divyanshu2132/DCA-3Di/blob/main/dca/dca_functions.py): mfDCA internals and Hamiltonian calculations
-- [`dca/dca_analysis.py`](https://github.com/Divyanshu2132/DCA-3Di/blob/main/dca/dca_analysis.py): mapping and plotting helpers for DI/contact analysis
-- [`dca/helper_functions.py`](https://github.com/Divyanshu2132/DCA-3Di/blob/main/dca/helper_functions.py): PFAM cleaning/filtering and contact-map utilities
-- [`data/globin/`](https://github.com/Divyanshu2132/DCA-3Di/blob/main/data/globin): example globin landscape data
-- [`data/muticlass_protease/`](https://github.com/Divyanshu2132/DCA-3Di/blob/main/data/muticlass_protease): example peptidase data
+- [`model/model.py`](https://github.com/PotoyanGroup/3Di-DCA-Landscape/blob/main/model/model.py): VAE encoder/decoder and training step
+- [`model/layers.py`](https://github.com/PotoyanGroup/3Di-DCA-Landscape/blob/main/model/layers.py): reparameterization layer
+- [`model/generator.py`](https://github.com/PotoyanGroup/3Di-DCA-Landscape/blob/main/model/generator.py): FASTA loading and one-hot encoding
+- [`dca/dca_class.py`](https://github.com/PotoyanGroup/3Di-DCA-Landscape/blob/main/dca/dca_class.py): main DCA interface
+- [`dca/dca_functions.py`](https://github.com/PotoyanGroup/3Di-DCA-Landscape/blob/main/dca/dca_functions.py): mfDCA internals and Hamiltonian calculations
+- [`dca/dca_analysis.py`](https://github.com/PotoyanGroup/3Di-DCA-Landscape/blob/main/dca/dca_analysis.py): mapping and plotting helpers for DI/contact analysis
+- [`dca/helper_functions.py`](https://github.com/PotoyanGroup/3Di-DCA-Landscape/blob/main/dca/helper_functions.py): PFAM cleaning/filtering and contact-map utilities
+- [`data/globin/`](https://github.com/PotoyanGroup/3Di-DCA-Landscape/blob/main/data/globin): example globin landscape data
+- [`data/muticlass_protease/`](https://github.com/PotoyanGroup/3Di-DCA-Landscape/blob/main/data/muticlass_protease): example peptidase data
 
 ## VAE Model
 
-The training script is [`run_vae.py`](https://github.com/Divyanshu2132/DCA-3Di/blob/main/run_vae.py):
+The training script is [`run_vae.py`](https://github.com/PotoyanGroup/3Di-DCA-Landscape/blob/main/run_vae.py):
 
 ```bash
 python run_vae.py <input_fasta> <output_model_path> <log_dir_prefix>
@@ -73,7 +73,7 @@ The VAE maps each flattened one-hot encoded sequence into a 2D latent space and 
 
 ## DCA Utilities
 
-The DCA entrypoint is the [`dca`](https://github.com/Divyanshu2132/DCA-3Di/blob/main/dca/dca_class.py) class in [`dca/dca_class.py`](https://github.com/Divyanshu2132/DCA-3Di/blob/main/dca/dca_class.py).
+The DCA entrypoint is the [`dca`](https://github.com/PotoyanGroup/3Di-DCA-Landscape/blob/main/dca/dca_class.py) class in [`dca/dca_class.py`](https://github.com/PotoyanGroup/3Di-DCA-Landscape/blob/main/dca/dca_class.py).
 
 Minimal example:
 
@@ -100,11 +100,11 @@ This supports:
 
 The included data and notebook match the structural-landscape workflow described in the paper.
 
-- [`data/globin/3Di.fasta`](https://github.com/Divyanshu2132/DCA-3Di/blob/main/data/globin/3Di.fasta): example 3Di alignment
-- [`data/globin/all_grid.fasta`](https://github.com/Divyanshu2132/DCA-3Di/blob/main/data/globin/all_grid.fasta): decoded or grid-sampled sequences used for landscape scoring
-- [`data/globin/coord.pkl`](https://github.com/Divyanshu2132/DCA-3Di/blob/main/data/globin/coord.pkl): latent coordinate metadata
-- [`data/globin/entropy_map.npy`](https://github.com/Divyanshu2132/DCA-3Di/blob/main/data/globin/entropy_map.npy): precomputed decoder entropy map
-- [`Analysis.ipynb`](https://github.com/Divyanshu2132/DCA-3Di/blob/main/Analysis.ipynb): notebook for computing Hamiltonians on a grid and visualizing the landscape
+- [`data/globin/3Di.fasta`](https://github.com/PotoyanGroup/3Di-DCA-Landscape/blob/main/data/globin/3Di.fasta): example 3Di alignment
+- [`data/globin/all_grid.fasta`](https://github.com/PotoyanGroup/3Di-DCA-Landscape/blob/main/data/globin/all_grid.fasta): decoded or grid-sampled sequences used for landscape scoring
+- [`data/globin/coord.pkl`](https://github.com/PotoyanGroup/3Di-DCA-Landscape/blob/main/data/globin/coord.pkl): latent coordinate metadata
+- [`data/globin/entropy_map.npy`](https://github.com/PotoyanGroup/3Di-DCA-Landscape/blob/main/data/globin/entropy_map.npy): precomputed decoder entropy map
+- [`Analysis.ipynb`](https://github.com/PotoyanGroup/3Di-DCA-Landscape/blob/main/Analysis.ipynb): notebook for computing Hamiltonians on a grid and visualizing the landscape
 
 Minimal install:
 
@@ -116,7 +116,7 @@ If you want to reproduce the full paper workflow, you will also need access to P
 
 ## Batch Scripts
 
-[`train.sh`](https://github.com/Divyanshu2132/DCA-3Di/blob/main/train.sh) and [`translate.sh`](https://github.com/Divyanshu2132/DCA-3Di/blob/main/translate.sh) are cluster-oriented templates, not turnkey launch scripts.
+[`train.sh`](https://github.com/PotoyanGroup/3Di-DCA-Landscape/blob/main/train.sh) and [`translate.sh`](https://github.com/PotoyanGroup/3Di-DCA-Landscape/blob/main/translate.sh) are cluster-oriented templates, not turnkey launch scripts.
 
 - paths are placeholders
 - `train.sh` points to a different repository directory name
