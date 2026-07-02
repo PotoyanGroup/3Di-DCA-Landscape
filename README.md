@@ -4,7 +4,7 @@ Structure-aware protein landscape modeling with 3Di sequences, ProstT5 translati
 
 Shukla D, Martin J, Morcos F, Potoyan DA. *A Structure-Aware Generative AI Framework for Revealing Functional Relationships in Proteins Families*. bioRxiv, 2025. DOI: [10.1101/2025.09.18.676787](https://doi.org/10.1101/2025.09.18.676787)
 
-## Pipeline Figure
+## Pipeline
 
 ![Figure 1 from the preprint: ProstT5-3Di and VAE-based structural landscape generation pipeline](https://github.com/PotoyanGroup/3Di-DCA-Landscape/blob/main/assets/pipeline.jpg)
 
