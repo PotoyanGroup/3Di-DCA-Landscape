@@ -6,7 +6,7 @@ Shukla D, Martin J, Morcos F, Potoyan DA. *A Structure-Aware Generative AI Frame
 
 ## Pipeline Figure
 
-![Figure 1 from the preprint: ProstT5-3Di and VAE-based structural landscape generation pipeline](https://github.com/PotoyanGroup/3Di-DCA-Landscape/blob/main/assets/pipeline.pdf)
+![Figure 1 from the preprint: ProstT5-3Di and VAE-based structural landscape generation pipeline](https://github.com/PotoyanGroup/3Di-DCA-Landscape/blob/main/assets/pipeline.jpg)
 
 ## Project Overview
 
